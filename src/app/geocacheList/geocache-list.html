@@ -1,0 +1,3 @@
+<ul>
+  <li *ngFor="#entry of geocacheService.entries"><a [routerLink]="['GeocacheDetail', {id: entry.id}]">{{entry.title}} ({{entry.id}})</a></li>
+</ul>
