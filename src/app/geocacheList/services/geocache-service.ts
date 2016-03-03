@@ -13,23 +13,35 @@ export class GeocacheService {
   }
 
   getData(): GeocacheEntry[] {
-    let cache1: GeocacheEntry = new GeocacheEntry();
-    cache1.id = 'GC5J942';
-    cache1.title = 'Bernlohe bei Nacht';
-    cache1.finalHint = 'N 49° 21.(PLN-30)\nE 011° 06.(MKO+890)';
-    cache1.solvingMethod = 'ROT 13';
-    cache1.finalCoordinates = 'N 49° 21.315\nE 011° 06.998';
-    cache1.annotations = 'Auf dem Zettel von Stage 4 stehen hinten die Koordinaten von Stage 5';
-    cache1.stages.push(new GeocacheStage(1, {key: 'A', value: '5'}, ''));
-    cache1.stages.push(new GeocacheStage(2, {key: 'B', value: '8'}, ''));
-    cache1.stages.push(new GeocacheStage(3, {key: 'C', value: '3'}, ''));
-    cache1.stages.push(new GeocacheStage(4, {key: 'X', value: '0'},
-      'Auf der Rueckseite des Zettels stehen die Koordinaten fuer Stage 5'));
-    cache1.stages.push(new GeocacheStage(5, {key: 'Y', value: '4'}, ''));
-    cache1.stages.push(new GeocacheStage(6, {key: 'Z', value: '1'}, ''));
-    return [cache1];
     //return this.http.get('/assets/data.json')
     // .map(res => res.json());
+    return [];
+
+  }
+
+  importDataFromJSON(json): void {
+
+    let result: GeocacheEntry[] = [];
+
+    json.forEach((entryData) => {
+      let entry = new GeocacheEntry();
+      entry.id = entryData.id;
+      entry.title = entryData.title;
+      entry.finalHint = entryData.finalHint;
+      entry.solvingMethod = entryData.solvingMethod;
+      entry.finalCoordinates = entryData.finalCoordinates;
+      entry.annotations = entryData.annotations;
+
+      entryData.stages.forEach((stageData) => {
+        entry.stages.push(new GeocacheStage(stageData.stageNumber, {
+          key: stageData.foundValue.key,
+          value: stageData.foundValue.value}, stageData.annotation));
+      });
+
+      result.push(entry);
+    });
+
+    this.entries = result;
   }
 
   ngOnInit() {

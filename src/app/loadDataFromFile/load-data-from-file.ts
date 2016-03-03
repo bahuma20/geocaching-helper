@@ -18,6 +18,9 @@ export class LoadDataFromFileComponent {
       let result = e.target['result'];
       try {
         self.parsedJSON = JSON.parse(result);
+
+        // Import the file into the geocache Service
+        self.geocacheService.importDataFromJSON(self.parsedJSON);
       } catch (error) {
         self.errors.push(error.name + ': ' + error.message);
       }
