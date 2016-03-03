@@ -1,0 +1,4 @@
+<input type="file" (change)="onFileChanged($event)" accept=".json">
+<div class="errors" *ngIf="errors.length > 0">
+  <div class="error" *ngFor="#error of errors">{{error}}</div>
+</div>
