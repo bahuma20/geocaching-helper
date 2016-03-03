@@ -63,4 +63,7 @@ export class GeocacheService {
     return null;
   }
 
+  exportDataToJSON(): String {
+    return JSON.stringify(this.entries, null, 2);
+  }
 }
