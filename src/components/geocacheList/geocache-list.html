@@ -1,7 +1,0 @@
-<div class="no-entries" *ngIf="geocacheService.entries.length == 0">
-  Es sind keine Caches vorhanden.
-</div>
-
-<ul *ngIf="geocacheService.entries.length > 0">
-  <li *ngFor="#entry of geocacheService.entries"><a [routerLink]="['GeocacheDetail', {id: entry.id}]">{{entry.title}} ({{entry.id}})</a></li>
-</ul>

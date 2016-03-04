@@ -1,4 +1,5 @@
-# @AngularClass
+# Specifies files to intentionally ignore when using Git
+# http://git-scm.com/docs/gitignore
 
 # Logs
 logs
