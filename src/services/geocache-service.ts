@@ -1,7 +1,7 @@
 import {Injectable} from 'angular2/core';
 import {Http} from 'angular2/http';
-import {GeocacheEntry} from '../../../models/GeocacheEntry';
-import {GeocacheStage} from '../../../models/GeocacheStage';
+import {GeocacheEntry} from '../models/GeocacheEntry';
+import {GeocacheStage} from '../models/GeocacheStage';
 
 @Injectable()
 export class GeocacheService {
@@ -16,7 +16,6 @@ export class GeocacheService {
     //return this.http.get('/assets/data.json')
     // .map(res => res.json());
     return [];
-
   }
 
   importDataFromJSON(json): void {

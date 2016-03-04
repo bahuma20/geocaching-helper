@@ -5,9 +5,8 @@ import {ExportDataToFileComponent} from '../exportDataToFile/export-data-to-file
 
 @Component({
   selector: 'home',
-  pipes: [ ],
-  styles: [ require('./home.css') ],
   template: require('./home.html'),
+  styles: [ require('./home.css') ],
   directives: [GeocacheListComponent, LoadDataFromFileComponent, ExportDataToFileComponent]
 })
 export class Home {

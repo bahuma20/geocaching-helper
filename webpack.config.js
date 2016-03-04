@@ -26,7 +26,7 @@ module.exports = helpers.validate({
   debug: true,
   // cache: false,
 
-  // our angular app
+  // our angular components
   entry: { 'polyfills': './src/polyfills.ts', 'main': './src/main.ts' },
 
   // Config for our build files

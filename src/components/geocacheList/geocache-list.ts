@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {GeocacheService} from './services/geocache-service';
+import {GeocacheService} from './../../services/geocache-service';
 import {RouterLink} from 'angular2/router';
 
 @Component({
@@ -13,7 +13,5 @@ import {RouterLink} from 'angular2/router';
 export class GeocacheListComponent {
 
   constructor(public geocacheService: GeocacheService) {
-    console.log(this.geocacheService);
-    console.log(this.geocacheService.getEntryById('GC5J942'));
   }
 }

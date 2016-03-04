@@ -23,11 +23,11 @@ if ('production' === process.env.ENV) {
  * App Component
  * our top level component that holds all of our components
  */
-import {App} from './app/app';
-import {GeocacheService} from './app/geocacheList/services/geocache-service';
+import {App} from './components/app/app';
+import {GeocacheService} from './services/geocache-service';
 
 /*
- * Bootstrap our Angular app with a top level component `App` and inject
+ * Bootstrap our Angular components with a top level component `App` and inject
  * our Services and Providers into Angular's dependency injection
  */
 export function main() {
@@ -43,7 +43,7 @@ export function main() {
 
 /*
  * Vendors
- * For vendors for example jQuery, Lodash, angular2-jwt just import them anywhere in your app
+ * For vendors for example jQuery, Lodash, angular2-jwt just import them anywhere in your components
  * Also see custom_typings.d.ts as you also need to do `typings install x` where `x` is your module
  */
 

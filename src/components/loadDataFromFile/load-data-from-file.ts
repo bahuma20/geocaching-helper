@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {GeocacheService} from '../geocacheList/services/geocache-service';
+import {GeocacheService} from '../../services/geocache-service';
 
 @Component({
   selector: 'load-data-from-file',
