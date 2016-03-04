@@ -9,7 +9,9 @@ import {GeocacheService} from '../../services/geocache-service';
 export class LoadDataFromFileComponent {
   parsedJSON: Object[];
   fileReader: FileReader= new FileReader();
-  errors: String[] = [];
+  errors: string[] = [];
+  fileSelected: boolean = false;
+  fileName: string = '';
 
   constructor(public geocacheService: GeocacheService) {
     let self: LoadDataFromFileComponent = this;
@@ -21,6 +23,7 @@ export class LoadDataFromFileComponent {
 
         // Import the file into the geocache Service
         self.geocacheService.importDataFromJSON(self.parsedJSON);
+        self.fileSelected = true;
       } catch (error) {
         self.errors.push(error.name + ': ' + error.message);
       }
@@ -36,10 +39,17 @@ export class LoadDataFromFileComponent {
 
     // Validate File
     if (this.validateFile(file)) {
+      this.fileName = file.name;
       this.fileReader.readAsText(file);
     } else {
       this.errors.push('Dateiformat nicht unterstuetzt');
     }
+  }
+
+  ejectCurrentFile(event) {
+    this.fileSelected = false;
+    this.fileName = '';
+    this.geocacheService.entries = [];
   }
 
   validateFile(file: File): boolean {

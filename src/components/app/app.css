@@ -1,0 +1,14 @@
+* {
+  font-family: sans-serif;
+}
+
+header {
+  background: #4053ff;
+  color: #FFF;
+  box-shadow: 0 0 10px rgba(0,0,0,.25);
+  padding: 10px;
+}
+
+main {
+  padding: 10px;
+}

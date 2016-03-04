@@ -7,6 +7,7 @@ import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router';
 import {FORM_PROVIDERS} from '../../../node_modules/angular2/common.d';
 import {Home} from '../home/home';
 import {GeocacheDetail} from '../geocacheDetail/geocache-detail';
+import {LoadDataFromFileComponent} from '../loadDataFromFile/load-data-from-file';
 
 /*
  * App Component
@@ -14,7 +15,7 @@ import {GeocacheDetail} from '../geocacheDetail/geocache-detail';
  */
 @Component({
   selector: 'app',
-  directives: [ ROUTER_DIRECTIVES ],
+  directives: [ ROUTER_DIRECTIVES, LoadDataFromFileComponent ],
   pipes: [],
   styles: [require('./app.css')],
   template: require('./app.html')
